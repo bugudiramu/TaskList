@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "348428885125",
+    "firebase_url": "https://tasklist-8223f.firebaseio.com",
+    "project_id": "tasklist-8223f",
+    "storage_bucket": "tasklist-8223f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348428885125:android:edf1f52848f815c0",
+        "android_client_info": {
+          "package_name": "com.example.task_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348428885125-a4irjrds31ub2ehbege0nl615idkeuni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb6ZPTAHU7a_0l8VLw-LYuWygv3Wqcq4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348428885125-a4irjrds31ub2ehbege0nl615idkeuni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
