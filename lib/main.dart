@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_list/ui/displayUserInfo.dart';
+// import 'package:task_list/ui/displayUserInfo.dart';
 import 'ui/taskListScreen.dart';
 import 'ui/loginPage.dart';
 import 'ui/signUpPage.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 void main() {
   runApp(
@@ -18,7 +19,6 @@ void main() {
         '/': (BuildContext context) => LoginPage(),
         '/todoscreen': (BuildContext context) => TodoScreen(),
         '/signup': (BuildContext context) => SignUpPage(),
-        '/userinfo': (BuildContext context) => UserInfo(),
       },
       debugShowCheckedModeBanner: false,
     ),

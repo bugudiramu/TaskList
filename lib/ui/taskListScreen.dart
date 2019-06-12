@@ -1,20 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart' as prefix0;
 
 class TodoScreen extends StatefulWidget {
+  final FirebaseUser user;
+  TodoScreen({Key key, this.user});
   _TodoScreenState createState() => _TodoScreenState();
 }
 
 class _TodoScreenState extends State<TodoScreen>
     with SingleTickerProviderStateMixin {
-  final _cloudFirestore = Firestore.instance.collection('todos').snapshots();
+  FirebaseUser user;
+
+  final _cloudFirestore =
+      Firestore.instance.collection('todos').snapshots();
 
   GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   TextEditingController _textController = TextEditingController();
   final uid = Firestore.instance.collection('users').document().documentID;
-
   bool active = true;
 
   @override
@@ -65,12 +68,7 @@ class _TodoScreenState extends State<TodoScreen>
                   style: TextStyle(fontSize: 16.0),
                 ),
                 onTap: () {
-                  FirebaseAuth.instance.signOut().then((val) {
-                    prefix0.Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacementNamed('/');
-                  }).catchError((e) {
-                    print(e);
-                  });
+                  logOut();
                 },
               ),
             ),
@@ -283,5 +281,14 @@ class _TodoScreenState extends State<TodoScreen>
           .setData({'task': _textController.text.toString()});
       debugPrint("Item added");
     }
+  }
+
+  Future<void> logOut() async {
+    await FirebaseAuth.instance.signOut().then((val) {
+      Navigator.of(context).pop();
+      Navigator.of(context).pushReplacementNamed('/');
+    }).catchError((e) {
+      print(e);
+    });
   }
 }
