@@ -131,7 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
     final formstate = _formKey.currentState;
     if (formstate.validate()) {
       formstate.save();
-      FirebaseUser user = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: _email, password: _password)
           .then((signedInUser) {
         UserManagement().storeNewUser(signedInUser, context);
