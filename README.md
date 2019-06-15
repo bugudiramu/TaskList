@@ -2,6 +2,15 @@
 
 A new Flutter project.
 
+# Features in this App
+
+####  swipe to delete or remove from the list
+####  Beautiful UI 
+####  Cloud_firestore for storing the tasks
+####  Login/Logout Features
+  
+  
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
