@@ -12,8 +12,7 @@ class _TodoScreenState extends State<TodoScreen>
     with SingleTickerProviderStateMixin {
   FirebaseUser user;
 
-  final _cloudFirestore =
-      Firestore.instance.collection('todos').snapshots();
+  final _cloudFirestore = Firestore.instance.collection('todos').snapshots();
 
   GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   TextEditingController _textController = TextEditingController();
@@ -124,7 +123,7 @@ class _TodoScreenState extends State<TodoScreen>
                       ),
                     ),
                     key: Key(Firestore.instance
-                        .collection('todos')
+                        .collection('users')
                         .document()
                         .documentID),
                     child: Padding(
@@ -142,7 +141,7 @@ class _TodoScreenState extends State<TodoScreen>
                                   print("List tile tapped!");
                                   print(Firestore.instance
                                       .collection('todos')
-                                      .document(uid));
+                                      .document());
                                 },
                                 leading: CircleAvatar(
                                   child: Text(
