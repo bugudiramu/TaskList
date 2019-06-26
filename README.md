@@ -1,4 +1,4 @@
-# TaskList -> Under Construction
+# TaskList
 
 A new Flutter project.
 
